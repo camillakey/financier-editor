@@ -83,19 +83,22 @@
         }
 
         static applyHistory(textarea) {
-            let history = [textarea.value];
+            let history = [];
             let historyIndex = 0;
             let timeout = 1000;
             let timeoutID = 0;
 
+            history[historyIndex] = {};
+            copyProperties(textarea, history[historyIndex]);
+
             textarea.addEventListener("keydown", function (event) {
                 if (event.ctrlKey && event.key == "z") {
-                    undo();
+                    popHistory(-1);
                     event.stopPropagation();
                     event.preventDefault();
                 } else if (event.ctrlKey && event.key == "Z"
                     || event.ctrlKey && event.key == "y") {
-                    redo();
+                    popHistory(+1);
                     event.stopPropagation();
                     event.preventDefault();
                 }
@@ -103,30 +106,30 @@
 
             textarea.addEventListener("keyup", function (event) {
                 window.clearTimeout(timeoutID);
-                timeoutID = window.setTimeout(updateHistory, timeout);
+                timeoutID = window.setTimeout(pushHistory, timeout);
             });
 
-            function undo() {
-                updateHistory();
-                if (historyIndex > 0) {
-                    historyIndex--;
-                    textarea.value = history[historyIndex];
-                }
-            }
-
-            function redo() {
-                updateHistory();
-                if (historyIndex < history.length - 1) {
+            function pushHistory() {
+                if (history[historyIndex].value != textarea.value) {
                     historyIndex++;
-                    textarea.value = history[historyIndex];
-                }
-            }
-
-            function updateHistory() {
-                if (history[historyIndex] != textarea.value) {
-                    historyIndex++;
-                    history[historyIndex] = textarea.value;
+                    history[historyIndex] = {};
+                    copyProperties(textarea, history[historyIndex]);
                     history = history.slice(0, historyIndex + 1);
+                }
+            }
+
+            function popHistory(diff) {
+                pushHistory();
+                if (0 <= historyIndex + diff && historyIndex + diff < history.length) {
+                    historyIndex += diff;
+                    copyProperties(history[historyIndex], textarea);
+                }
+            }
+
+            function copyProperties(src, dist) {
+                let properties = ["value", "selectionDirection", "selectionStart", "selectionEnd"];
+                for (let property of properties) {
+                    dist[property] = src[property];
                 }
             }
         }
