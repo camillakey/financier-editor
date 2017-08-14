@@ -1,0 +1,5 @@
+code.wrap[class*="language-"],
+pre.wrap[class*="language-"] {
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}

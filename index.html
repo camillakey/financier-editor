@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>financier</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="lib/material-design-lite/material.indigo-red.min.css" media="screen">
+    <link rel="stylesheet" href="lib/prism/prism.css">
+    <link rel="stylesheet" href="lib/prism/plugins/code-wrapper.css">
+    <link rel="stylesheet" href="lib/prism/plugins/wrappable-line-numbers.css">
+    <link rel="stylesheet" href="default.css" media="screen">
+    <link rel="stylesheet" href="preview.css" media="screen, print">
+    <link rel="stylesheet" href="print.css" media="print">
+    <script src="lib/material-design-lite/material.min.js" defer></script>
+    <script src="lib/marked/marked.js"></script>
+    <script src="lib/prism/prism.js"></script>
+    <script src="lib/prism/plugins/code-wrapper.js"></script>
+    <script src="lib/prism/plugins/wrappable-line-numbers.js"></script>
+    <script src="lib/object-iterator-support/object-iterator-support.js"></script>
+    <script src="default.js"></script>
+    <style></style>
+</head>
+
+<body>
+    <div class="mdl-layout mdl-js-layout">
+        <main class="mdl-layout__content">
+            <div class="mdl-grid">
+                <div class="financier-editor mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet">
+                    <div class="mdl-tabs mdl-tabs--vertical mdl-js-tabs mdl-js-ripple-effect">
+                        <div class="mdl-tabs__tab-bar">
+                            <a href="#financier-information" class="mdl-tabs__tab">information</a>
+                            <a href="#financier-main" class="mdl-tabs__tab is-active">main</a>
+                            <a href="#financier-resources" class="mdl-tabs__tab">resources</a>
+                            <a href="#financier-css" class="mdl-tabs__tab">css</a>
+                        </div>
+
+                        <div id="financier-information" class="financier-information mdl-tabs__panel">
+                            <div class="mdl-grid">
+                                <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet">
+                                    <button id="financier-information__import" class="mdl-button mdl-js-button mdl-button--primary">import</button>
+                                    <button id="financier-information__export" class="mdl-button mdl-js-button mdl-button--primary">export</button>
+                                    <button id="financier-information__print" class="mdl-button mdl-js-button mdl-button--primary">print</button>
+                                </div>
+
+                                <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet">
+                                    <div class="mdl-textfield mdl-js-textfield">
+                                        <input id="financier-information-name__textarea" type="text" class="mdl-textfield__input">
+                                        <label for="financier-information-name__textarea" class="mdl-textfield__label"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="financier-main" class="financier-main mdl-tabs__panel is-active">
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <textarea id="financier-main__textarea" class="mdl-textfield__input" spellcheck="false"></textarea>
+                                <label for="financier-main__textarea" class="mdl-textfield__label"></label>
+                            </div>
+                        </div>
+
+                        <div id="financier-resources" class="financier-resources mdl-tabs__panel">
+                            <div class="mdl-grid">
+                            </div>
+                        </div>
+
+                        <div id="financier-css" class="financier-css mdl-tabs__panel">
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <textarea id="financier-css__textarea" class="mdl-textfield__input" spellcheck="false"></textarea>
+                                <label for="financier-css__textarea" class="mdl-textfield__label"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="financier-preview mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet">
+                    <div class="financier"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

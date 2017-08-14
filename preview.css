@@ -1,0 +1,129 @@
+@page {
+    margin: 25mm 19mm;
+}
+
+.financier {
+    padding-left: 2em;
+    font-size: 12.5px;
+}
+
+.financier * {
+    font-size: 100%;
+    font-weight: 100;
+}
+
+.financier a {
+    color: #ff5252;
+    text-decoration: none;
+} .financier a::before {
+    content: " ";
+} .financier a[data-header][data-h1]::before {
+    content: " " attr(data-h1);
+} .financier a[data-header][data-h1][data-h2]::before {
+    content: " " attr(data-h1) "." attr(data-h2);
+} .financier a[data-header][data-h1][data-h2][data-h3]::before {
+    content: " " attr(data-h1) "." attr(data-h2) "." attr(data-h3);
+} .financier a[data-header][data-h1][data-h2][data-h3][data-h4]::before {
+    content: " " attr(data-h1) "." attr(data-h2) "." attr(data-h3) "." attr(data-h4);
+} .financier a[data-header][data-h1][data-h2][data-h3][data-h4][data-h5]::before {
+    content: " " attr(data-h1) "." attr(data-h2) "." attr(data-h3) "." attr(data-h4) "." attr(data-h5);
+} .financier a[data-header][data-h1][data-h2][data-h3][data-h4][data-h5][data-h6]::before {
+    content: " " attr(data-h1) "." attr(data-h2) "." attr(data-h3) "." attr(data-h4) "." attr(data-h5) "." attr(data-h6);
+} .financier a[data-code][data-total]::before {
+    content: " Code " attr(data-total);
+} .financier a[data-code][data-h1][data-h1-total]::before {
+    content: " Code " attr(data-h1) "." attr(data-h1-total);
+} .financier a[data-table][data-total]::before {
+    content: " Table " attr(data-total);
+} .financier a[data-table][data-h1][data-h1-total]::before {
+    content: " Table " attr(data-h1) "." attr(data-h1-total);
+} .financier a[data-image][data-total]::before {
+    content: " Fig " attr(data-total);
+} .financier a[data-image][data-h1][data-h1-total]::before {
+    content: " Fig " attr(data-h1) "." attr(data-h1-total);
+} .financier a::after {
+    content: " ";
+}
+
+.financier h1 {
+    font-size: 1.6em;
+    margin:    2em 0 1em calc(-2em / 1.6);
+} .financier h2 {
+    font-size: 1.4em;
+    margin: 2em 0 1em calc(-2em / 1.4);
+} .financier h3 {
+    font-size: 1.2em;
+    margin: 2em 0 1em calc(-2em / 1.2);
+} .financier h4 {
+    font-size: 1.1em;
+    margin: 2em 0 1em calc(-2em / 1.1);
+} .financier h5,
+    .financier h6 {
+    margin: 2em 0 1em -2em;
+} .financier h1::before {
+    padding-right: 1em;
+    content: attr(data-h1);
+} .financier h2::before {
+    padding-right: 1em;
+    content: attr(data-h1) "." attr(data-h2);
+} .financier h3::before {
+    padding-right: 1em;
+    content: attr(data-h1) "." attr(data-h2) "." attr(data-h3);
+} .financier h4::before {
+    padding-right: 1em;
+    content: attr(data-h1) "." attr(data-h2) "." attr(data-h3) "." attr(data-h4);
+} .financier h5::before {
+    padding-right: 1em;
+    content: attr(data-h1) "." attr(data-h2) "." attr(data-h3) "." attr(data-h4) "." attr(data-h5);
+} .financier h6::before {
+    padding-right: 1em;
+    content: attr(data-h1) "." attr(data-h2) "." attr(data-h3) "." attr(data-h4) "." attr(data-h5) "." attr(data-h6);
+}
+
+.financier figure {
+    margin: 1.5em 2em;
+    text-align: center;
+} .financier figure figcaption {
+    margin: 1em 0;
+} .financier figure pre {
+    text-align: left;
+} .financier figure figcaption[data-code][data-total]::before {
+    padding-right: 1em;
+    content: "Code " attr(data-total);
+} .financier figure figcaption[data-code][data-h1][data-h1-total]::before {
+    padding-right: 1em;
+    content: "Code " attr(data-h1) "." attr(data-h1-total);
+} .financier figure table {
+    display: inline-block;
+} .financier figure figcaption[data-table][data-total]::before {
+    padding-right: 1em;
+    content: "Table " attr(data-total);
+} .financier figure figcaption[data-table][data-h1][data-h1-total]::before {
+    padding-right: 1em;
+    content: "Table " attr(data-h1) "." attr(data-h1-total);
+} .financier figure img {
+} .financier figure figcaption[data-image][data-total]::before {
+    padding-right: 1em;
+    content: "Fig " attr(data-total);
+} .financier figure figcaption[data-image][data-h1][data-h1-total]::before {
+    padding-right: 1em;
+    content: "Fig " attr(data-h1) "." attr(data-h1-total);
+}
+
+.financier p {
+    margin: 0;
+    text-indent: 1em;
+}
+
+.financier :not(pre) > code {
+    margin: 0 .2em;
+    padding: .1em .3em;
+}
+
+.financier code * {
+  font-family: inherit;
+}
+
+.financier strong {
+    font-weight: bold;
+}

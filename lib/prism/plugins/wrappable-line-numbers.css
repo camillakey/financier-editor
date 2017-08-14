@@ -1,0 +1,32 @@
+pre.wrappable-line-numbers {
+	counter-reset: linenumber;
+}
+
+pre.wrappable-line-numbers code {
+	margin-left: 3em;
+	padding-left: 0.8em;
+	border-left: 1px solid #999;
+	display: block;
+}
+
+span.wrappable-line-numbers-rows {
+	position: relative;
+	display: block;
+}
+
+span.wrappable-line-numbers-rows::before {
+	position: absolute;
+	width: 2.2em;
+	left: -3.8em;
+	display: inline-block;
+	color: #999;
+	text-align: right;
+	content: counter(linenumber);
+	counter-increment: linenumber;
+	user-select: none;
+}
+
+span.wrappable-line-numbers-rows:empty::after {
+	content: " ";
+	user-select: none;
+}

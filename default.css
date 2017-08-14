@@ -1,0 +1,99 @@
+.mdl-tabs.mdl-tabs--vertical {
+    position: relative;
+    height: 100%;
+}
+
+.mdl-tabs.mdl-tabs--vertical .mdl-tabs__tab-bar {
+    width: 144px;
+    height: calc(100% - 32px);
+    padding: 16px 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-right: 1px solid #e0e0e0;
+    border-bottom: none;
+}
+
+.mdl-tabs.mdl-tabs--vertical .mdl-tabs__tab {
+    width: calc(100% - 34px);
+    padding: 0 16px;
+    text-align: left;
+}
+
+.mdl-tabs.mdl-tabs--vertical .mdl-tabs__tab.is-active {
+    border-right: 2px solid #3f51b5;
+}
+
+.mdl-tabs.mdl-tabs--vertical .mdl-tabs__tab.is-active::after {
+    content: none;
+}
+
+.mdl-tabs.mdl-tabs--vertical .mdl-tabs__panel {
+    position: absolute;
+    width: calc(100% - 165px);
+    height: 100%;
+    top: 0;
+    padding-left: 165px;
+}
+
+.financier-editor {
+    height: calc(100vh - 32px);
+}
+
+.financier-information {
+    overflow-y: scroll;
+}
+
+.financier-main .mdl-textfield,
+.financier-css .mdl-textfield {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+.financier-main .mdl-textfield .mdl-textfield__input,
+.financier-css .mdl-textfield .mdl-textfield__input {
+    height: calc(100% - 8px);
+    font-family: monospace;
+    border: none;
+    resize: none;
+    overflow-y: scroll;
+}
+
+.financier-main .mdl-textfield .mdl-textfield__input + label::after,
+.financier-css .mdl-textfield .mdl-textfield__input + label::after {
+    bottom: 0;
+}
+
+.financier-resources {
+    overflow-y: scroll;
+}
+
+.financier-resources__resource {
+    position: relative;
+}
+
+.financier-resources__resource-overview {
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+}
+
+.financier-resources__resource-overview img {
+    width: 100%;
+}
+
+.financier-resources__resource-close {
+    position: absolute;
+    top: -16px;
+    left: -16px;
+    padding: 0;
+    color: #ff5252;
+}
+
+.financier-preview {
+    width: calc(50% - 24px);
+    height: calc(100vh - 32px);
+    margin-left: 16px;
+    overflow-y: scroll;
+}
