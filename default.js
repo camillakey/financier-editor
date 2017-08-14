@@ -586,6 +586,7 @@
         }
 
         loadElements_() {
+            this.elements_["head.title"] = document.querySelector("head title");
             this.elements_["head.style"] = document.querySelector("head style");
 
             this.elements_["files.import.button"] = document.querySelector("#financier-information__import");
@@ -673,6 +674,14 @@
         financierElements.select("field.css.textarea").dispatchStandardEvent("modify");
     });
 
+    financierData.getProperty("name").addEventListener("modify", function () {
+        if (financierData.getProperty("name").getValue() == "") {
+            financierElements.select("head.title").innerHTML = "financier";
+        } else {
+            financierElements.select("head.title").innerHTML = financierData.getProperty("name").getValue();
+        }
+    });
+
     financierData.getProperty("markdown").addEventListener("modify", function () {
         financierElements.select("preview.main").innerHTML =
             financierMarkdownParser.parse(financierData.getProperty("markdown").getValue());
@@ -734,7 +743,7 @@
 
     financierElements.addEventListener("load", function () {
         financierElements.select("files.export.button").addEventListener("click", function () {
-            Utility.download(financierData.toObject(), financierData.getProperty("name").getValue());
+            Utility.download(financierData.toObject(), financierData.getProperty("name").getValue() + ".json");
         });
     });
 
