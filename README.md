@@ -1,5 +1,7 @@
+this repository was transferred from camillakey/financier-editor .
+
 # financier-editor
-https://camillakey.github.io/financier-editor/
+https://tmyksj.github.io/financier-editor/
 
 # Syntax
 ## Markdown
@@ -55,7 +57,7 @@ two space.
 ~~del text~~
 
 # link
-[financier editor](https://github.com/camillakey/financier-editor)
+[financier editor](https://github.com/tmyksj/financier-editor)
 
 # raw HTML
 <p style="color: #00a;">raw HTML</p>
